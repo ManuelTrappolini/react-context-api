@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-
-
+import Form from '../components/Form'
 
 
 const emptyPost = {
@@ -13,11 +12,18 @@ const emptyPost = {
 }
 
 
-export default function PostsPage() {
+
+
+export default function PostsPage({ handleFormField }) {
+
+
+
+    const { id } = useParams();
+
+
     const [formData, setFormData] = useState(emptyPost)
     const [posts, setPosts] = useState('')
     const [postsData, setPostsData] = useState({})
-    const { id } = useParams();
 
     function handleClick(e) {
         fetchData()
@@ -34,8 +40,6 @@ export default function PostsPage() {
     }
 
     useEffect(fetchData, [])
-
-
 
     function handleFormSubmit(e) {
 
@@ -75,18 +79,6 @@ export default function PostsPage() {
             })
     }
 
-    function handleFormField(e) {
-        //console.log(e.target);
-
-        const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
-
-        setFormData({
-            ...formData,
-            [e.target.name]: value
-
-        })
-
-    }
 
     function handleDeleteClick(id) {
         console.log('clicked', postsData);
@@ -112,79 +104,17 @@ export default function PostsPage() {
     }
 
 
+
+
+
+
     return (
         <>
 
             <div className="containter pt-3">
                 <h2 className='page-title pb-5 '>Posts' List</h2>
 
-                <form onSubmit={handleFormSubmit}>
-
-
-
-
-                    <div className="input-group mb-3">
-                        <input type="text"
-                            className="form-control"
-                            placeholder="Recipient's title"
-                            aria-label="Recipient's title"
-                            aria-describedby="titlehelper"
-                            value={formData.title}
-                            name='title'
-                            id='title'
-                            onChange={handleFormField}
-                        />
-                        <input type="text"
-                            className="form-control"
-                            placeholder="Recipient's tags"
-                            aria-label="Recipient's tags"
-                            aria-describedby="tagshelper"
-                            value={formData.tags}
-                            name='tags'
-                            id='tags'
-                            onChange={handleFormField}
-                        />
-                        <input type="text"
-                            className="form-control"
-                            placeholder="Recipient's image"
-                            aria-label="Recipient's image"
-                            aria-describedby="imagehelper"
-                            value={formData.image}
-                            name='image'
-                            id='image'
-                            onChange={handleFormField}
-                        />
-
-
-                        <textarea type="text" className="form-control"
-                            placeholder="Recipient's content"
-                            aria-label="Recipient's content"
-                            aria-describedby="contenthelper"
-                            value={formData.content}
-                            name='content'
-                            id='content'
-                            onChange={handleFormField}
-                        />
-
-
-                        <button className='btn btn-outline-secondary' type='submit' onClick={handleFormSubmit}> Click ME</button>
-                    </div>
-                    <div className="form-check m-3">
-                        <input
-                            id="published"
-                            name='published'
-                            type="checkbox"
-                            className="form-check-input"
-                            value={formData.published}
-                            onChange={handleFormField}
-
-                        />
-                        <label className="form-check-label" htmlFor=""> Published </label>
-                    </div>
-
-
-
-                </form>
+                <Form handleFormField={handleFormField} handleFormSubmit={handleFormSubmit} handleDeleteClick={handleDeleteClick} />
 
                 <ul>
                     {postsData.data ? postsData.data.map((post, id) => (

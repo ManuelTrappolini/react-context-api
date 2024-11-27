@@ -1,4 +1,9 @@
+import { useContext } from "react"
+import PostsContext from "../contexts/createContext"
+
 export default function About() {
+
+    const { posts } = useContext(PostsContext)
 
     return (
         <>
@@ -14,7 +19,7 @@ export default function About() {
                 <div className="container d-flex justify-content-center pt-5">
                     <img className="img-about-us" src="/images/aboutus.jpg" alt="" width={400} height={250} />
                 </div>
-
+                <div>{posts}</div>
             </div>
 
 
