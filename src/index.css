@@ -1,0 +1,123 @@
+li {
+  list-style: none;
+
+}
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  color: white;
+  height: 80px;
+  padding-left: 2rem;
+
+
+
+}
+
+nav {
+  a {
+    margin-right: 2rem;
+    text-decoration: none;
+    color: white;
+
+    &.active {
+      color: rgb(102, 255, 0);
+    }
+  }
+
+
+}
+
+.page-title {
+  text-align: center;
+  background-color: rgb(221, 216, 216);
+  ;
+}
+
+.bg-grey {
+  background-color: rgb(221, 216, 216);
+}
+
+.main {
+  padding-left: 2rem;
+  padding-top: 1rem;
+  background-color: rgb(221, 216, 216);
+  height: calc(100vh - 140px);
+
+  p {
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+    padding-top: 2rem;
+  }
+}
+
+footer {
+  height: 60px;
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+
+}
+
+.container-card {
+  display: flex;
+  justify-content: center;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.containter {
+  background-color: rgb(221, 216, 216);
+
+}
+
+.tags {
+  font-style: italic;
+}
+
+.posts-card {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 4px;
+  box-shadow: 0 0 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  gap: 1rem;
+
+  .prev,
+  .next {
+    border-radius: .25rem;
+    padding: 0.25rem 0.75rem;
+
+
+  }
+}
