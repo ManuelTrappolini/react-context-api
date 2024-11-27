@@ -9,8 +9,9 @@ import About from './pages/AboutUs'
 import SinglePostPage from './pages/SinglePostPage'
 import NotFound from './pages/NotFoundPage'
 import PostsContext from './contexts/createContext'
+import AppCardApi from './components/Card/PostsCardApi'
 
-const posts = <PostsPage />
+const posts = <AppCardApi />
 
 
 function App() {

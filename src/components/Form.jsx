@@ -9,10 +9,9 @@ const emptyPost = {
 }
 
 
-export default function Form({ handleFormField, handleFormSubmit }) {
+export default function Form({ handleFormSubmit, handleFormField }) {
 
     const [formData, setFormData] = useState(emptyPost)
-
 
 
 
@@ -28,7 +27,6 @@ export default function Form({ handleFormField, handleFormSubmit }) {
         })
 
     }
-
 
 
 
